@@ -1,0 +1,86 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34202.233
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AggregatorCompany", "AggregatorCompany", "{04D88EF7-736F-4A9D-B6CE-78F2B13EC03F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AggregatorCompany.Api", "AggregatorCompany\AggregatorCompany.API\AggregatorCompany.Api.csproj", "{6B87301E-D93A-43BC-8C93-839E8FEEE760}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PaymentCompany", "PaymentCompany", "{0FDB524A-2084-49BC-A6F5-68A7E7229E4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FlightCompany", "FlightCompany", "{A0DE4A11-67B0-43C3-9008-833038C750A1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HotelCompany", "HotelCompany", "{F255AB51-F58C-4F03-B08D-DDEF12EEBA3D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FlightCompany.Api", "FlightCompany\FlightCompany.Api\FlightCompany.Api.csproj", "{F03BB478-E23F-4E2F-A957-F96F388B2F2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HotelCompany.Api", "HotelCompany\HotelCompany.Api\HotelCompany.Api.csproj", "{39891406-4D09-4453-B7D6-909233E1678C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaymentCompany.Api", "PaymentCompany\PaymentCompany.Api\PaymentCompany.Api.csproj", "{26230590-9C07-44D9-ADDE-C76CD2D1463B}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{8A95577B-8E44-4C69-ACE2-1AEBCF9736E2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{20E6EE50-1418-4539-AA20-EA2C534926FF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga.Messages", "Shared\Saga.Messages\Saga.Messages.csproj", "{6386EF79-85D7-40B6-BA72-623625C62F38}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Saga.RabbitMQ", "Shared\Saga.RabbitMQ\Saga.RabbitMQ.csproj", "{143B6BE6-3C26-4027-8A1D-D5B86C583310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Saga.Infrastructure", "Shared\Saga.Infrastructure\Saga.Infrastructure.csproj", "{59B95C29-2C36-4B39-B477-22A4C70772E4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6B87301E-D93A-43BC-8C93-839E8FEEE760}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B87301E-D93A-43BC-8C93-839E8FEEE760}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B87301E-D93A-43BC-8C93-839E8FEEE760}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B87301E-D93A-43BC-8C93-839E8FEEE760}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F03BB478-E23F-4E2F-A957-F96F388B2F2F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F03BB478-E23F-4E2F-A957-F96F388B2F2F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F03BB478-E23F-4E2F-A957-F96F388B2F2F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F03BB478-E23F-4E2F-A957-F96F388B2F2F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39891406-4D09-4453-B7D6-909233E1678C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39891406-4D09-4453-B7D6-909233E1678C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39891406-4D09-4453-B7D6-909233E1678C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39891406-4D09-4453-B7D6-909233E1678C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26230590-9C07-44D9-ADDE-C76CD2D1463B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26230590-9C07-44D9-ADDE-C76CD2D1463B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26230590-9C07-44D9-ADDE-C76CD2D1463B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26230590-9C07-44D9-ADDE-C76CD2D1463B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A95577B-8E44-4C69-ACE2-1AEBCF9736E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A95577B-8E44-4C69-ACE2-1AEBCF9736E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A95577B-8E44-4C69-ACE2-1AEBCF9736E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A95577B-8E44-4C69-ACE2-1AEBCF9736E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6386EF79-85D7-40B6-BA72-623625C62F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6386EF79-85D7-40B6-BA72-623625C62F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6386EF79-85D7-40B6-BA72-623625C62F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6386EF79-85D7-40B6-BA72-623625C62F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{143B6BE6-3C26-4027-8A1D-D5B86C583310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{143B6BE6-3C26-4027-8A1D-D5B86C583310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{143B6BE6-3C26-4027-8A1D-D5B86C583310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{143B6BE6-3C26-4027-8A1D-D5B86C583310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59B95C29-2C36-4B39-B477-22A4C70772E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59B95C29-2C36-4B39-B477-22A4C70772E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59B95C29-2C36-4B39-B477-22A4C70772E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59B95C29-2C36-4B39-B477-22A4C70772E4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6B87301E-D93A-43BC-8C93-839E8FEEE760} = {04D88EF7-736F-4A9D-B6CE-78F2B13EC03F}
+		{F03BB478-E23F-4E2F-A957-F96F388B2F2F} = {A0DE4A11-67B0-43C3-9008-833038C750A1}
+		{39891406-4D09-4453-B7D6-909233E1678C} = {F255AB51-F58C-4F03-B08D-DDEF12EEBA3D}
+		{26230590-9C07-44D9-ADDE-C76CD2D1463B} = {0FDB524A-2084-49BC-A6F5-68A7E7229E4E}
+		{6386EF79-85D7-40B6-BA72-623625C62F38} = {20E6EE50-1418-4539-AA20-EA2C534926FF}
+		{143B6BE6-3C26-4027-8A1D-D5B86C583310} = {20E6EE50-1418-4539-AA20-EA2C534926FF}
+		{59B95C29-2C36-4B39-B477-22A4C70772E4} = {20E6EE50-1418-4539-AA20-EA2C534926FF}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A46DE2A3-FE41-4B06-B5F7-B9C3880AE127}
+	EndGlobalSection
+EndGlobal
