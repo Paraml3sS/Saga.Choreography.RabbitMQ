@@ -25,6 +25,5 @@ namespace Saga.RabbitMQ
 
             return connection;
         }
-
     }
 }

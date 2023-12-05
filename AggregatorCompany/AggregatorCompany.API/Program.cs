@@ -13,13 +13,15 @@ var app = builder.Build();
 
 app.MapPost("/booking", (BookTravelRequest request, RabbitPublisher rabbit) =>
 {
-    PaymentCommand paymentCommand = new (
+    PaymentCommand command = new (
         ClientName: request.ClientName,
         Amount: request.Amount
     );
+
+    rabbit.Publish(command);
 
     return Results.Ok("Booking accepted.");
 });
 
 
-app.Run();
+await app.RunAsync();

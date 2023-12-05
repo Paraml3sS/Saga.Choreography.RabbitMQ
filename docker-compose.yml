@@ -17,17 +17,14 @@ services:
       context: .
       dockerfile: FlightCompany/FlightCompany.Api/Dockerfile
 
-
   hotelcompany.api:
     image: ${DOCKER_REGISTRY-}hotelcompanyapi
     build:
       context: .
       dockerfile: HotelCompany/HotelCompany.Api/Dockerfile
 
-
   paymentcompany.api:
     image: ${DOCKER_REGISTRY-}paymentcompanyapi
     build:
       context: .
       dockerfile: PaymentCompany/PaymentCompany.Api/Dockerfile
-
