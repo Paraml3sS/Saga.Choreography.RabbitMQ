@@ -1,5 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System.Net.Sockets;
+using Microsoft.Extensions.Configuration;
+using Polly;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Exceptions;
 
 namespace Saga.RabbitMQ
 {
@@ -21,7 +24,13 @@ namespace Saga.RabbitMQ
             connectionFactory.AutomaticRecoveryEnabled = true;
             connectionFactory.DispatchConsumersAsync = true;
 
-            var connection = connectionFactory.CreateConnection();
+            var policy = Policy
+                .Handle<SocketException>().Or<BrokerUnreachableException>()
+                .WaitAndRetry(5, retry => TimeSpan.FromSeconds(Math.Pow(2, retry)));
+
+            var connection = policy.Execute(() => 
+                connectionFactory.CreateConnection()
+            );
 
             return connection;
         }

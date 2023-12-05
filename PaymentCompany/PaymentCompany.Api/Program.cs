@@ -1,12 +1,11 @@
 ﻿using PaymentCompany.Api;
+using Saga.Infrastructure;
 using Saga.Messages;
 using Saga.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddSingleton(serviceProvider =>
-    new RabbitMqConnectionFactory(builder.Configuration).CreateConnection());
-builder.Services.AddSingleton<ChannelPool>();
+builder.AddRabbitMq();
 
 builder.Services.AddTransient<PaymentCommandHandler>();
 builder.Services.AddTransient<RabbitConsumer<PaymentCommand, PaymentCommandHandler>>();

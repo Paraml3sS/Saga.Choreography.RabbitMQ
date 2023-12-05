@@ -1,11 +1,10 @@
-﻿using Saga.Messages;
+﻿using Saga.Infrastructure;
+using Saga.Messages;
 using Saga.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder();
 
-builder.Services.AddSingleton(serviceProvider => 
-    new RabbitMqConnectionFactory(builder.Configuration).CreateConnection());
-builder.Services.AddSingleton<ChannelPool>();
+builder.AddRabbitMq();
 builder.Services.AddTransient<RabbitPublisher>();
 
 var app = builder.Build();
