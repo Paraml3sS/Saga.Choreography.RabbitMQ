@@ -8,5 +8,6 @@
     public DateTime Date { get; set; }
     public DateTime Arrival { get; set; }
     public DateTime Departure { get; set; }
-    public int Amount { get; set; }
+    public int HotelCost { get; set; }
+    public int FlightCost { get; set; }
 }

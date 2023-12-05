@@ -1,8 +1,9 @@
 ﻿using System.Text;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
+using Saga.RabbitMQ;
 
-namespace Saga.RabbitMQ
+namespace Saga.Infrastructure
 {
     public class RabbitPublisher
     {

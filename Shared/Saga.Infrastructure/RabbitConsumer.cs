@@ -1,9 +1,10 @@
 ﻿using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
+using Saga.RabbitMQ;
 
-namespace Saga.RabbitMQ
+namespace Saga.Infrastructure
 {
-    public class RabbitConsumer<TCommand, TCommandHandler>
+    public class RabbitConsumer<TCommand, TCommandHandler> : IConsumer
         where TCommand : Command
         where TCommandHandler : CommandHandler<TCommand>
     {
@@ -32,10 +33,15 @@ namespace Saga.RabbitMQ
             consumer.Received += _handler.Handle;
 
             channel.BasicConsume(
-                queue: queueName, 
-                autoAck: true, 
+                queue: queueName,
+                autoAck: true,
                 consumer: consumer
             );
         }
+    }
+
+    public interface IConsumer
+    {
+        void Listen();
     }
 }

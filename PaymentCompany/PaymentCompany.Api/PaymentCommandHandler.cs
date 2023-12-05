@@ -1,13 +1,13 @@
-﻿using Saga.Messages;
-using Saga.RabbitMQ;
+﻿using Saga.Infrastructure;
+using Saga.Messages;
 
 namespace PaymentCompany.Api
 {
-    public class PaymentCommandHandler : CommandHandler<PaymentCommand>
+    public class PaymentCommandHandler(ILogger<PaymentCommandHandler> _logger) : CommandHandler<PaymentCommand>
     {
         protected override Task Handle(PaymentCommand command)
         {
-            Console.WriteLine($"Payment from {command.ClientName} with {command.Amount}$.");
+            _logger.LogInformation("Payment from {ClientName} with {Amount}$.", command.ClientName, command.Amount);
 
             return Task.CompletedTask;
         }

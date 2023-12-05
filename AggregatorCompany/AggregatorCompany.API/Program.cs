@@ -1,23 +1,32 @@
 ﻿using Saga.Infrastructure;
 using Saga.Messages;
-using Saga.RabbitMQ;
 
 var builder = WebApplication.CreateBuilder();
 
 builder.AddRabbitMq();
-builder.Services.AddTransient<RabbitPublisher>();
 
 var app = builder.Build();
 
 
 app.MapPost("/booking", (BookTravelRequest request, RabbitPublisher rabbit) =>
 {
-    PaymentCommand command = new (
+    FlightBookingCommand flightBookingCommand = new (
         ClientName: request.ClientName,
-        Amount: request.Amount
+        FlightNumber: request.FlightNumber,
+        From: request.From,
+        To: request.To,
+        Amount: request.FlightCost
     );
 
-    rabbit.Publish(command);
+    HotelBookingCommand hotelBookingCommand = new (
+        ClientName: request.ClientName,
+        Arrival: request.Arrival,
+        Departure: request.Departure,
+        Amount: request.HotelCost
+    );
+
+    rabbit.Publish(flightBookingCommand);
+    rabbit.Publish(hotelBookingCommand);
 
     return Results.Ok("Booking accepted.");
 });
